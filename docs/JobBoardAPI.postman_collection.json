@@ -1,0 +1,120 @@
+{
+    "info": {
+        "name": "Job Board API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get Job Listings",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/api/jobs",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "jobs"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Job",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Senior Laravel Developer\",\n    \"description\": \"Develop and maintain Laravel applications.\",\n    \"company_name\": \"TechCorp\",\n    \"salary_min\": 60000,\n    \"salary_max\": 90000,\n    \"is_remote\": true,\n    \"job_type\": \"full-time\",\n    \"status\": \"published\",\n    \"published_at\": \"2024-03-01\",\n    \"languages\": [\n        1,\n        2\n    ],\n    \"locations\": [\n        1\n    ],\n    \"categories\": [\n        1\n    ]\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/api/jobs",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "jobs"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Job Details",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/api/jobs/1",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "jobs",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Job",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Updated Laravel Developer\",\n    \"salary_min\": 70000,\n    \"salary_max\": 100000\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/api/jobs/1",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "jobs",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Delete Job",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/api/jobs/1",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "jobs",
+                        "1"
+                    ]
+                }
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8000"
+        }
+    ]
+}
